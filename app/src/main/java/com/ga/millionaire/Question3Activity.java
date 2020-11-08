@@ -63,7 +63,7 @@ public class Question3Activity extends AppCompatActivity  implements QuestionDia
                     Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.BOTTOM | Gravity.LEFT, 0, 0);
             toast.show();
-            Intent finalScore = new Intent(this, FinalScoreActivity.class);
+            Intent finalScore = new Intent(this, FinalScoreActivityLost.class);
             finalScore.putExtra(Question1Activity.EXTRA_SCORE, 100);
             startActivity(finalScore);
         }
