@@ -2,6 +2,7 @@ package com.ga.millionaire;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.icu.text.NumberFormat;
 import android.os.Bundle;
@@ -46,52 +47,52 @@ public class Question2Activity extends AppCompatActivity implements QuestionDial
         if (selectedId == -1) {  //user submitted blank response
             openDialog();
         }
-            else if (radioButton.getId() == R.id.choiceD) {
 
-                Intent nextQuestion = new Intent(this, Question3Activity.class);
-                nextQuestion.putExtra(Question1Activity.EXTRA_SCORE, Question1Activity.score
-                        += QUESTION_VALUE);
+        else if (radioButton.getId() == R.id.choiceD) {
+
+            Intent nextQuestion = new Intent(this, Question3Activity.class);
+            nextQuestion.putExtra(Question1Activity.EXTRA_SCORE, Question1Activity.score
+                    += QUESTION_VALUE);
 
             numberAsString = numberFormat.format(Question1Activity.score);
 
-                Toast.makeText(this, "Your Answer is Correct!, you got $"
-                        + numberAsString, Toast.LENGTH_SHORT).show();
-                startActivity(nextQuestion);
-            }
-
-            else {
-                Toast toast = Toast.makeText(this, "Your Answer is Wrong, Game Over!",
-                        Toast.LENGTH_SHORT);
-                toast.setGravity(Gravity.BOTTOM | Gravity.LEFT, 0, 0);
-                toast.show();
-                Intent finalScore = new Intent(this, FinalScoreActivity.class);
-                finalScore.putExtra(Question1Activity.EXTRA_SCORE, 100);
-                startActivity(finalScore);
-            }
+            Toast.makeText(this, "Your Answer is Correct!, you got $"
+                    + numberAsString, Toast.LENGTH_SHORT).show();
+            startActivity(nextQuestion);
         }
-
-        public void onBackPressed () {
-            //Prevent operation of back button
-            Toast.makeText(this, "Game in progress, you can't go back now",
-                    Toast.LENGTH_SHORT).show();
-
+        else {
+            Toast toast = Toast.makeText(this, "Your Answer is Wrong, Game Over!",
+                    Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.BOTTOM | Gravity.LEFT, 0, 0);
+            toast.show();
+            Intent finalScore = new Intent(this, FinalScoreActivity.class);
+            finalScore.putExtra(Question1Activity.EXTRA_SCORE, 100);
+            startActivity(finalScore);
         }
+    }
 
-        public void openDialog () {
-            QuestionDialog newDialog = new QuestionDialog();
-            newDialog.show(getSupportFragmentManager(), "dialogfragment");
-        }
+    public void onBackPressed() {
+        //Prevent operation of back button
+        Toast.makeText(this, "Game in progress, you can't go back now",
+                Toast.LENGTH_SHORT).show();
 
-        @Override
-        public void returnAnswer (Boolean Answer){
+    }
+
+    public void openDialog() {
+        QuestionDialog newDialog = new QuestionDialog();
+        newDialog.show(getSupportFragmentManager(), "dialogfragment");
+    }
+
+    @Override
+    public void returnAnswer(Boolean Answer) {
         //answer from dialog
-            endGame = Answer;
-            if (endGame) {
-                Intent finalScore = new Intent(this, FinalScoreActivity.class);
-                finalScore.putExtra(Question1Activity.EXTRA_SCORE, Question1Activity.score);
-                startActivity(finalScore);
-            }
-
+        endGame = Answer;
+        if (endGame) {
+            Intent finalScore = new Intent(this, FinalScoreActivity.class);
+            finalScore.putExtra(Question1Activity.EXTRA_SCORE, Question1Activity.score);
+            startActivity(finalScore);
         }
+
+    }
 
 }

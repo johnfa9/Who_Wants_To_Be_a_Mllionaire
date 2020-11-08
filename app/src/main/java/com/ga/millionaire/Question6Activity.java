@@ -48,11 +48,11 @@ public class Question6Activity extends AppCompatActivity implements QuestionDial
         //that they don't want to continue the game
         //user will be shown how much they won
 
-        if (selectedId == -1){
+        if (selectedId == -1){  //user did not submit a response
             openDialog();
         }
 
-        if (radioButton.getId() == R.id.choiceA) {
+        else if (radioButton.getId() == R.id.choiceA) {
 
             Intent nextQuestion = new Intent(this, Question7Activity.class);
             nextQuestion.putExtra(Question1Activity.EXTRA_SCORE,

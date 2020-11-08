@@ -44,7 +44,8 @@ public class Question7Activity extends AppCompatActivity implements QuestionDial
 
         if (selectedId == -1) {  //user submitted blank answer
             openDialog();
-        } else if (radioButton.getId() == R.id.choiceD) {
+        }
+        else if (radioButton.getId() == R.id.choiceD) {
 
             Intent nextQuestion = new Intent(this, Question8Activity.class);
             nextQuestion.putExtra(Question1Activity.EXTRA_SCORE,
@@ -53,7 +54,8 @@ public class Question7Activity extends AppCompatActivity implements QuestionDial
             Toast.makeText(this, "Your Answer is Correct!, you got $" +
                     numberAsString, Toast.LENGTH_SHORT).show();
             startActivity(nextQuestion);
-        } else {
+        }
+        else {
             Toast toast = Toast.makeText(this, "Your Answer is Wrong, Game Over!", Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.BOTTOM | Gravity.LEFT, 0, 0);
             toast.show();
