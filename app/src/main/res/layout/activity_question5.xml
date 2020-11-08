@@ -9,7 +9,6 @@
         android:id="@+id/question5"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         tools:context=".Question1Activity">
 
         <TextView
@@ -21,10 +20,7 @@
             android:layout_marginTop="40dp"
             android:layout_marginEnd="16dp"
             android:text="@string/question5"
-            android:textSize="20sp"
-
-            />
-
+            android:textSize="20sp" />
 
         <RadioGroup
             android:id="@+id/radioGroup"
@@ -34,14 +30,12 @@
             android:layout_centerInParent="true"
             android:layout_marginTop="27dp">
 
-
             <RadioButton
                 android:id="@+id/choiceA"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/radiobutton_drawable"
                 android:text="White rice" />
-
 
             <RadioButton
                 android:id="@+id/choiceB"
@@ -66,7 +60,6 @@
                 android:background="@drawable/radiobutton_drawable"
                 android:text="Barley" />
 
-
         </RadioGroup>
 
         <Button
@@ -80,7 +73,6 @@
             android:onClick="submitQuestion1"
             android:paddingHorizontal="50dp"
             android:text="Final Answer" />
-
 
         <TextView
             android:id="@+id/earnings"

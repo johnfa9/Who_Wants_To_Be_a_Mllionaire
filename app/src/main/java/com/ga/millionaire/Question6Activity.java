@@ -28,6 +28,7 @@ public class Question6Activity extends AppCompatActivity implements QuestionDial
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question6);
         Intent intent = getIntent();
+        //display score from previous question
         int score = intent.getIntExtra(Question1Activity.EXTRA_SCORE, 0);
         TextView vwScore =findViewById(R.id.earnings);
         numberAsString = numberFormat.format(Question1Activity.score);
@@ -35,6 +36,10 @@ public class Question6Activity extends AppCompatActivity implements QuestionDial
     }
 
     public void submitQuestion1(View view) {
+        //User submitted a question
+        //user ends game if they do not make a selection and press the final answer button
+        //a dialog will display, confirming that they want to cancel the game.
+
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         int selectedId = radioGroup.getCheckedRadioButtonId();
         RadioButton radioButton = (RadioButton) findViewById(selectedId);
@@ -79,6 +84,7 @@ public class Question6Activity extends AppCompatActivity implements QuestionDial
     }
 
     public void openDialog() {
+        //Create dialog and confirm user wants to end game
         QuestionDialog newDialog = new QuestionDialog();
         newDialog.show(getSupportFragmentManager(),"dialogfragment");
     }

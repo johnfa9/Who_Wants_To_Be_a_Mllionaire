@@ -28,7 +28,7 @@ public class Question3Activity extends AppCompatActivity  implements QuestionDia
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question3);
-
+        //display score from previous correct answer
         Intent intent = getIntent();
         int score = intent.getIntExtra(Question1Activity.EXTRA_SCORE, 0);
         TextView vwScore =findViewById(R.id.earnings);
@@ -37,14 +37,17 @@ public class Question3Activity extends AppCompatActivity  implements QuestionDia
     }
 
     public void submitQuestion1(View view) {
+        //User submitted a question
+        //user ends game if they do not make a selection and press the final answer button
+        //a dialog will display, confirming that they want to cancel the ga
+        // me.
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         int selectedId = radioGroup.getCheckedRadioButtonId();
         RadioButton radioButton = (RadioButton) findViewById(selectedId);
-        if (selectedId == -1) {
+        if (selectedId == -1) {  //player submitted blank answer
             openDialog();
 
         }
-
 
         else if (radioButton.getId() == R.id.choiceC) {
 
@@ -74,19 +77,20 @@ public class Question3Activity extends AppCompatActivity  implements QuestionDia
     }
 
     public void openDialog () {
+        //Create dialog and confirm user wants to end game
         QuestionDialog newDialog = new QuestionDialog();
         newDialog.show(getSupportFragmentManager(), "dialogfragment");
     }
 
     @Override
     public void returnAnswer (Boolean Answer){
+        //if user ends game, display the amount they won
+        //if not wait for user to select an answer
         endGame = Answer;
         if (endGame) {
             Intent finalScore = new Intent(this, FinalScoreActivity.class);
             finalScore.putExtra(Question1Activity.EXTRA_SCORE, Question1Activity.score);
             startActivity(finalScore);
         }
-
     }
-
 }

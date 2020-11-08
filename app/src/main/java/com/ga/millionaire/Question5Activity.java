@@ -35,17 +35,17 @@ public class Question5Activity extends AppCompatActivity implements QuestionDial
         vwScore.setText("You Earned: $" + numberAsString);
     }
 
-
-
     public void submitQuestion1(View view) {
+
+        //User submitted a question
+        //user ends game if they do not make a selection and press the final answer button
+        //a dialog will display, confirming that they want to cancel the game.
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         int selectedId = radioGroup.getCheckedRadioButtonId();
         RadioButton radioButton = (RadioButton) findViewById(selectedId);
 
-        if (selectedId == -1){
+        if (selectedId == -1){  //user submitted blank answer
             openDialog();
-//
-//            }
         }
 
         else if (radioButton.getId() == R.id.choiceB) {
@@ -75,12 +75,15 @@ public class Question5Activity extends AppCompatActivity implements QuestionDial
     }
 
     public void openDialog() {
+        //Create dialog and confirm user wants to end game
         QuestionDialog newDialog = new QuestionDialog();
         newDialog.show(getSupportFragmentManager(),"dialogfragment");
     }
 
     @Override
     public void returnAnswer(Boolean Answer) {
+        //if user ends game, display the amount they won
+        //if not wait for user to select an answer
         endGame=Answer;
         if (endGame) {
             Intent finalScore = new Intent(this, FinalScoreActivity.class);

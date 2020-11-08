@@ -29,6 +29,7 @@ public class Question4Activity extends AppCompatActivity implements QuestionDial
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question4);
         Intent intent = getIntent();
+        //dispaly sccore from previous correct answer
         int score = intent.getIntExtra(Question1Activity.EXTRA_SCORE, 0);
         TextView vwScore =findViewById(R.id.earnings);
         numberAsString = numberFormat.format(Question1Activity.score);
@@ -44,10 +45,9 @@ public class Question4Activity extends AppCompatActivity implements QuestionDial
         //that they don't want to continue the game
         //user will be shown how much they won
 
-        if (selectedId == -1){
+        if (selectedId == -1){  //user submitted no answer
             openDialog();
-//
-//            }
+
         }
 
         else if (radioButton.getId() == R.id.choiceC) {
@@ -79,18 +79,20 @@ public class Question4Activity extends AppCompatActivity implements QuestionDial
     }
 
     public void openDialog () {
+        //Create dialog and confirm user wants to end game
         QuestionDialog newDialog = new QuestionDialog();
         newDialog.show(getSupportFragmentManager(), "dialogfragment");
     }
 
     @Override
     public void returnAnswer (Boolean Answer){
+        //if user ends game, display the amount they won
+        //if not wait for user to select an answer
         endGame = Answer;
         if (endGame) {
             Intent finalScore = new Intent(this, FinalScoreActivity.class);
             finalScore.putExtra(Question1Activity.EXTRA_SCORE, Question1Activity.score);
             startActivity(finalScore);
         }
-
     }
 }

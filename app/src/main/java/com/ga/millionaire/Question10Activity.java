@@ -17,7 +17,6 @@ import java.util.Locale;
 public class Question10Activity extends AppCompatActivity implements
         QuestionDialog.QuestionDialogLister{
 
-
     private final int QUESTION_VALUE = 500000;
     private Boolean endGame;
 
@@ -29,6 +28,7 @@ public class Question10Activity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question10);
+        //display score from previous question
         Intent intent = getIntent();
         int score = intent.getIntExtra(Question1Activity.EXTRA_SCORE, 0);
         TextView vwScore =findViewById(R.id.earnings);
@@ -37,6 +37,9 @@ public class Question10Activity extends AppCompatActivity implements
     }
 
     public void submitQuestion1(View view) {
+        //User submitted a question
+        //user ends game if they do not make a selection and press the final answer button
+        //a dialog will display, confirming that they want to cancel the game.
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         int selectedId = radioGroup.getCheckedRadioButtonId();
         RadioButton radioButton = (RadioButton) findViewById(selectedId);
@@ -45,7 +48,7 @@ public class Question10Activity extends AppCompatActivity implements
         //that they don't want to continue the game
         //user will be shown how much they won
 
-        if (selectedId == -1){
+        if (selectedId == -1){  //user submitted a blank question
             openDialog();
         }
 
@@ -77,6 +80,7 @@ public class Question10Activity extends AppCompatActivity implements
     }
 
     public void openDialog() {
+        //Create dialog and confirm user wants to end game
         QuestionDialog newDialog = new QuestionDialog();
         newDialog.show(getSupportFragmentManager(),"dialogfragment");
     }

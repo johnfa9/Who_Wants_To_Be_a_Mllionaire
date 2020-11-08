@@ -9,7 +9,6 @@
         android:id="@+id/question2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         tools:context=".Question2Activity">
 
         <TextView
@@ -23,7 +22,6 @@
             android:text="@string/question2"
             android:textSize="20sp" />
 
-
         <RadioGroup
             android:id="@+id/radioGroup"
             android:layout_width="wrap_content"
@@ -32,14 +30,12 @@
             android:layout_centerInParent="true"
             android:layout_marginTop="27dp">
 
-
             <RadioButton
                 android:id="@+id/choiceA"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Jaws"
                 android:background="@drawable/radiobutton_drawable"/>
-
 
             <RadioButton
                 android:id="@+id/choiceB"
@@ -63,7 +59,6 @@
                 android:layout_height="wrap_content"
                 android:text="Schindler’s List"
                 android:background="@drawable/radiobutton_drawable"/>
-
 
         </RadioGroup>
 
