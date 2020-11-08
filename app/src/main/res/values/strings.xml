@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Who Wants To Be a Millionaire</string>
+    <string name="question1">What governing document requires the United States to
+    take a census of the population ? \n\n (to end game submit no answer)</string>
+    <string name="question2">Which film did Steven Spielberg win his first Oscar for
+        Best Director ? \n\n (to end game submit no answer)</string>
+    <string name="question3">What NBA player has won the most league MVPs ?\n\n
+        (to end game, submit no answer)</string>
+    <string name="question4">What is the sum of the angles of a triangle ?\n\n
+        (to end game,submit no answer)</string>
+    <string name="question5">What is the only edible food that never expires ?\n\n
+        (to end game, submit no answer)</string>
+    <string name="question6">What is the fastest snake in the world ?\n\n
+        (to end game, submit no answer)</string>
+    <string name="question7">"Bronze is mainly an alloy of tin and which other metal ?\n\n
+        (to end game, submit no answer)</string>
+    <string name="question8">Which U.S. president said, “government of the people, by the people,
+        for the people” in his Gettysburg Address ?(to end game, submit no answer)</string>
+    <string name="question9">What did the "D" in "D-Day" stand for ?
+        (to end game, submit no answer)</string>
+    <string name="question10">How much of your vision do you lose if you go blind in one eye
+        ?(to end game, submit no answer)</string>
+</resources>

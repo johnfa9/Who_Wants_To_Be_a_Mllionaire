@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"> <!-- added to prevent blank space on bottom -->
+    <RelativeLayout
+        android:id="@+id/question5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        tools:context=".Question1Activity">
+
+        <TextView
+            android:id="@+id/text_view_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/question5"
+            android:textSize="20sp"
+
+            />
+
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_view_selected"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="27dp">
+
+
+            <RadioButton
+                android:id="@+id/choiceA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radiobutton_drawable"
+                android:text="White rice" />
+
+
+            <RadioButton
+                android:id="@+id/choiceB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radiobutton_drawable"
+                android:text="Honey" />
+
+
+            <RadioButton
+                android:id="@+id/choiceC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radiobutton_drawable"
+                android:text="Rye" />
+
+
+            <RadioButton
+                android:id="@+id/choiceD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radiobutton_drawable"
+                android:text="Barley" />
+
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/button_apply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/radioGroup"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="27dp"
+            android:background="@drawable/btn_rounded"
+            android:onClick="submitQuestion1"
+            android:paddingHorizontal="50dp"
+            android:text="Final Answer" />
+
+
+        <TextView
+            android:id="@+id/earnings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/button_apply"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:text="You Earned $0"
+            android:textSize="20sp" />
+    </RelativeLayout>
+</ScrollView>
